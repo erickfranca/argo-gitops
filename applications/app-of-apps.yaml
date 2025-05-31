@@ -5,18 +5,18 @@ metadata:
   namespace: argocd
 spec:
   destination:
-    namespace: argocd
+    namespace: argocd #it doesn't need a ns because it'll only manage others applications
     server: https://kubernetes.default.svc
   project: default
   source:
     path: app-of-apps
-    helm:
-      parameters:
-      - name: "argocd.giropopsSenhas.enabled"
-        value: "true"
-      - name: "argocd.randomLogger.enabled"
-        value: "true"
-    repoURL: https://github.com/bernardolsp/descomplicando-gitops-no-kubernetes-argocd.git
+    # helm:
+    #   parameters:
+    #   - name: "argocd.giropopsSenhas.enabled"
+    #     value: "true"
+    #   - name: "argocd.randomLogger.enabled"
+    #     value: "true"
+    repoURL: 'https://github.com/erickfranca/argo-gitops.git'
     targetRevision: feat/day2
   syncPolicy:
     automated:
@@ -24,4 +24,4 @@ spec:
       prune: true
     syncOptions:
     - CreateNamespace=true 
-    - PruneLast=true
+    # - PruneLast=true
