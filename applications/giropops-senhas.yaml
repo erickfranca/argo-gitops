@@ -14,7 +14,8 @@ spec:
     namespace: giropops-senhas
     server: "https://kubernetes.default.svc"
   syncPolicy:
-    automated: {}
+    automated:
+      selfHeal: false
     syncOptions:
     - CreateNamespace=true
     
