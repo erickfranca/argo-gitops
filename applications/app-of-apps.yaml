@@ -15,7 +15,7 @@ spec:
       - name: "argocd.giropopsSenhas.enabled"
         value: "true"
       - name: "argocd.randomLogger.enabled"
-        value: "true"
+        value: "false"
     repoURL: 'https://github.com/erickfranca/argo-gitops.git'
     targetRevision: feat/day2
   syncPolicy:
