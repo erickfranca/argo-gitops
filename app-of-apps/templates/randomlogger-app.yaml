@@ -10,7 +10,6 @@ spec:
     namespace: random-logger
     server: https://kubernetes.default.svc
   source:
-    helm: {}
     path: random-logger/helm
     repoURL: 'https://github.com/erickfranca/argo-gitops.git'
     targetRevision: feat/day2
