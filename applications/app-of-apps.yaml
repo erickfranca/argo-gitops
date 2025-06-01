@@ -9,13 +9,13 @@ spec:
     namespace: argocd #it doesn't need a ns because it'll only manage others applications
     server: https://kubernetes.default.svc
   source:
-    path: app-of-apps #chart path
-    # helm:
-    #   parameters:
-    #   - name: "argocd.giropopsSenhas.enabled"
-    #     value: "true"
-    #   - name: "argocd.randomLogger.enabled"
-    #     value: "true"
+    path: app-of-apps #chart
+    helm:
+      parameters:
+      - name: "argocd.giropopsSenhas.enabled"
+        value: "true"
+      - name: "argocd.randomLogger.enabled"
+        value: "true"
     repoURL: 'https://github.com/erickfranca/argo-gitops.git'
     targetRevision: feat/day2
   syncPolicy:
